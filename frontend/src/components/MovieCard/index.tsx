@@ -1,6 +1,6 @@
-import MovieScore from "components/MovieScore";
-import { Link } from "react-router-dom";
-import {Movie} from "types/Movie";
+import MovieScore from 'components/MovieScore';
+import { Link } from 'react-router-dom';
+import {Movie} from 'types/Movie';
 
 type Props = {
   movie: Movie;

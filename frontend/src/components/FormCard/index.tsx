@@ -2,8 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios, {AxiosRequestConfig} from 'axios';
 import { useState, useEffect } from 'react';
 import './styles.css';
-import { Movie } from "types/Movie";
-import { BASE_URL } from "utils/requests";
+import { Movie } from 'types/Movie';
+import { BASE_URL } from 'utils/requests';
 import { validateEmail } from 'utils/validate';
 
 type Props = {
