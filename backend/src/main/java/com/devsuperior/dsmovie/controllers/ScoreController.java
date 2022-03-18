@@ -16,6 +16,7 @@ public class ScoreController {
 
 	@Autowired
 	private ScoreService service;
+	
 
 	@PutMapping
 	public MovieDTO saveScore(@RequestBody ScoreDTO dto) {

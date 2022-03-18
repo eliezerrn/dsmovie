@@ -27,17 +27,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			http.headers().frameOptions().disable();
 		}
 		
-		http.cors().and().csrf().disable();
+		//CLA
+		//http.cors().configurationSource(corsConfigurationSource())
+			//.and().csrf().disable();
+		
+		http.cors()
+		.and().csrf().disable();
+		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.authorizeRequests().anyRequest().permitAll();
 	}
 
-	@Bean
-	CorsConfigurationSource corsConfigurationSource() {
-		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
-		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
-		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", configuration);
-		return source;
-	}
+	
+	//TEstar essa chamada
+	//@Bean
+	//CorsConfigurationSource corsConfigurationSource() {
+//		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
+	//	configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
+//		configuration.addAllowedOrigin("https://eliezer-dsmovie.herokuapp.com");
+//		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	//	source.registerCorsConfiguration("/**", configuration);
+	//	return source;
+	//}
 }
